@@ -1,0 +1,15 @@
+.header {
+    grid-area:h;
+    background-color: #4267B2;
+    display: flex;
+    height: 8vh;
+    width:100%;
+    justify-content: left;
+    align-items: center;
+}
+  
+.header i {
+    font-size: 35px;
+    margin-left: 76px;
+    color: #fff;
+}

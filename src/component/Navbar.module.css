@@ -1,0 +1,25 @@
+
+.nav {
+  padding-top: 2vh;
+  grid-area:n;
+  background-color: #fff;
+  width: calc( 100% - 2vh );
+  margin-left: 76px;
+  height: 21vh;
+  border-radius: 5px;
+}
+
+.nav ul {
+  margin:1vh 0 1vh 20px;
+  padding: 0;
+}
+
+.nav ul li {
+  list-style-type: none;
+  margin:0 0 1vh 0;
+  padding: 0;
+}
+
+.nav ul li a i {
+  width: 23%;
+}
