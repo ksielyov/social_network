@@ -8,5 +8,10 @@ body {
   grid-template-areas: "h h" "n c";
   grid-template-rows: 8vh 1fr;
   grid-template-columns: 2fr 10fr;
-  grid-gap:3.5vh;
+  grid-gap: 3.5vh;
+}
+
+.app-wrapper-content {
+  grid-area: c;
+  margin-left: 11vh;
 }

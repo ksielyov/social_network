@@ -1,0 +1,47 @@
+.profilePost {
+    background-color: #fff;
+    width: calc( 90% - 32px );
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-bottom: 3.5vh;
+  }
+  
+  .profilePost img {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 100vh;
+  }
+  
+  .postInfo {
+    height: 8vh;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .profilePost p {
+    width: 94%;
+  }
+  
+  .profilePost img {
+    margin-right: 2%;
+  }
+
+  .iconContainer {
+    text-align: right;
+  }
+
+  .iconContainer a {
+      margin-right: 8px;
+  }
+
+  .profilePost i {
+    font-size: 22px;
+  }
+  
+  .postText {
+    margin: 0;
+    padding: 0;
+  }

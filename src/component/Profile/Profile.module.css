@@ -1,0 +1,67 @@
+.cap img {
+  width: 100%;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+}
+
+.ava {
+  display: flex;
+  flex-direction: row;
+  height: 128px;
+  align-items: center;
+  margin-top: -64px;
+  margin-left: 16px;
+}
+
+.ava img {
+  width: 128px;
+  height: 128px;
+  background-color: #eee;
+  border-radius: 100vh;
+}
+
+.ava p {
+  margin-top: 8vh;
+  margin-left: 2%;
+}
+
+.profileInfo {
+  background-color: #fff;
+  width: 90%;
+  height: 57vh;
+  border-radius: 5px;
+  margin-bottom: 3.5vh;
+}
+
+.profilePostNew {
+  background-color: #fff;
+  width: calc( 90% - 32px);
+  padding: 0 16px;
+  height: 8vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.5vh;
+}
+
+.profilePostNew img {
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 100vh;
+}
+
+.profilePostNew textarea {
+  width: 94%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.info {
+  margin-left: 4%;
+}
