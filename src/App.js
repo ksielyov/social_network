@@ -17,11 +17,11 @@ function App() {
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route path='/' component={Profile} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/messages' component={Dialogs} />
-          <Route path='/news' component={News} />
-          <Route path='/music' component={Music} />
+          <Route exact path='/' component={Profile} />
+          <Route exact path='/profile' component={Profile} />
+          <Route exact path='/messages' component={Dialogs} />
+          <Route exact path='/news' component={News} />
+          <Route exact path='/music' component={Music} />
         </div>
       </div>
     </BrowserRouter>
