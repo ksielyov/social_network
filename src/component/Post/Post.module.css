@@ -1,7 +1,6 @@
 .profilePost {
-<<<<<<< HEAD
   background-color: #fff;
-  width: calc( 90% - 32px );
+  width: calc( 90% - 32px);
   padding: 8px 16px;
   border-radius: 5px;
   margin-bottom: 3.5vh;
@@ -16,7 +15,7 @@
 
 .postInfo {
   height: 8vh;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
@@ -38,7 +37,7 @@
 }
 
 .iconContainer a {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .profilePost i {
@@ -49,54 +48,46 @@
   margin: 0;
   padding: 0;
 }
-=======
-    background-color: #fff;
-    width: calc( 90% - 32px );
-    padding: 8px 16px;
-    border-radius: 5px;
-    margin-bottom: 3.5vh;
-  }
-  
-  .profilePost img {
-    width: 50px;
-    height: 50px;
-    background-color: #eee;
-    border-radius: 100vh;
-  }
-  
-  .postInfo {
-    height: 8vh;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  
-  .profilePost p {
-    width: 94%;
-  }
-  
-  .profilePost img {
-    margin-right: 2%;
-  }
 
-  .iconContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.profilePost img {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 100vh;
+}
 
-  .iconContainer a {
-      margin-right: 8px;
-  }
+.postInfo {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
 
-  .profilePost i {
-    font-size: 22px;
-  }
-  
-  .postText {
-    margin: 0;
-    padding: 0;
-  }
->>>>>>> 689a2e9a6bdf85733eb9c5e8757e418810141d8a
+.profilePost p {
+  width: 94%;
+}
+
+.profilePost img {
+  margin-right: 2%;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iconContainer a {
+  margin-right: 8px;
+}
+
+.profilePost i {
+  font-size: 22px;
+}
+
+.postText {
+  margin: 0;
+  padding: 0;
+}
