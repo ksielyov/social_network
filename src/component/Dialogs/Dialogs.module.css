@@ -4,30 +4,117 @@
     background-color: #fff;
     width: calc(90%);
     border-radius: 5px;
-    border:#E3E4E8 solid 2px;
-    height:75vh;
+    border: #E3E4E8 solid 1px;
+    height: 75vh;
 }
 
 .dialogs {
-    border-right:#E3E4E8 solid 2px;
-    overflow:scroll;
+    border-right: #E3E4E8 solid 1px;
+    overflow: scroll;
     height: 75vh;
 }
 
 .chat {
     width: 100%;
     height: 75vh;
+}
+
+.chatInfo {
+    height: 7vh;
+    width: calc(100% - 32px);
+    padding: 0 16px;
+    border-bottom: #E3E4E8 solid 1px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+}
+
+.leftContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.leftContainer h1 {
+    margin-right: 8px;
+}
+
+.leftContainer p {
+    font-size: 14px;
+}
+
+.rightContainer {
+    display:flex;
+    height: 7vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 12%;
+}
+
+.rightContainer i {
+    margin-bottom: -4px;
+    font-size: 28px !important;
+}
+
+.chatInfo h1 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.chatInfo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 100vh;
+    background-color: #eee;
+}
+
+.content {
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+    width:100%;
+    padding-top: 3vh;
+    height: 56vh;
+    overflow: scroll;
+}
+
+.messagesContainer {
+    margin-top: 64px;
 }
 
 .chat i {
     font-size: 64px;
-    color:#D5DFE9;
+    color: #D5DFE9;
 }
 
 .chat p {
     color: #929EB0;
+}
+
+.sendMessage {
+    width: 100%;
+    display: flex;
+    height: 7vh;
+    padding-top: 1vh;
+    justify-content: center;
+    align-items: center;
+    border-top: #E3E4E8 solid 1px;
+    background-color: #FAFBFC;
+}
+
+.sendMessage textarea {
+    width: 90%;
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 14px;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    margin-right: 8px;
+    border: #E3E4E8 solid 1px;
+}
+
+.sendMessage i {
+    font-size: 30px;
+    color: #D5DFE9;
 }
