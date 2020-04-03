@@ -10,6 +10,7 @@ const Dialogs = () => {
                 <Message
                     src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
                     name="Pavel Durov"
+                    id="3"
                     senderName="Me"
                     // message=""
                     messageSlip="I read now."
@@ -19,6 +20,7 @@ const Dialogs = () => {
                     src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
                     name="Alexey Navalny"
                     senderName="Alexey"
+                    id="4"
                     // message=""
                     messageSlip="Yes"
                 />

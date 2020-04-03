@@ -19,7 +19,7 @@ function App() {
         <div className='app-wrapper-content'>
           <Route exact path='/' component={Profile} />
           <Route exact path='/profile' component={Profile} />
-          <Route exact path='/messages' component={Dialogs} />
+          <Route path='/messages' component={Dialogs} />
           <Route exact path='/news' component={News} />
           <Route exact path='/music' component={Music} />
         </div>
