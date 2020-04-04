@@ -8,7 +8,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     padding: 0 8px;
-    border-bottom:#E3E4E8 solid 2px;
+    border-bottom:#E3E4E8 solid 1px;
 }
 
 .message:hover {

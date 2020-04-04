@@ -1,0 +1,28 @@
+.sendMessage {
+    width: 100%;
+    display: flex;
+    height: 7vh;
+    padding-top: 1vh;
+    justify-content: center;
+    align-items: center;
+    border-top: #E3E4E8 solid 1px;
+    background-color: #FAFBFC;
+}
+
+.sendMessage textarea {
+    width: 88%;
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 14px;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    margin-right: 8px;
+    border: #E3E4E8 solid 1px;
+    padding-left: 2%;
+}
+
+.sendMessage i {
+    font-size: 30px;
+    color: #D5DFE9;
+}

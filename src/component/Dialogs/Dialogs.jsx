@@ -3,60 +3,72 @@ import Class from './Dialogs.module.css';
 
 import Message from '../Message/Message';
 import DialogMessage from '../DialogMessage/DialogMessage';
+import ChatInfo from '../ChatInfo/ChatInfo';
+import SendMessage from '../SendMessage/SendMessage';
 
 const Dialogs = () => {
+
+    let messagesDialogData = [
+        {
+            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
+            name: 'Pavel Durov',
+            id: 4,
+            senderName: 'Me',
+            messageSlip: 'I read now.',
+        },
+
+        {
+            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
+            name: 'Alexey Navalny',
+            id: 3,
+            senderName: 'Alexey',
+            messageSlip: 'Yes',
+        },
+    ];
+
+    let dialogData = [
+        {
+            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
+            name: 'Alexey Navalny',
+            message: 'Россия без Путина не жизнеспособна.',
+        }
+    ];
+
+    let messages = dialogData.map(
+        data => <DialogMessage
+            src={data.src}
+            name={data.name}
+            message={data.message}
+        />
+    );
+
+    let messagesDialog = messagesDialogData.map(
+        data => <Message
+            src={data.src}
+            name={data.name}
+            id={data.id}
+            senderName={data.senderName}
+            // message=""
+            messageSlip={data.messageSlip}
+        />
+    );
+
     return (
         <div className={Class.dialogsWrapper}>
-            <div className={Class.dialogs}>
-                <Message
-                    src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
-                    name="Pavel Durov"
-                    id="3"
-                    senderName="Me"
-                    // message=""
-                    messageSlip="I read now."
-                />
 
-                <Message
-                    src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
-                    name="Alexey Navalny"
-                    senderName="Alexey"
-                    id="4"
-                    // message=""
-                    messageSlip="Yes"
-                />
-            </div>
+            <div className={Class.dialogs}>{messagesDialog}</div>
+
             <div className={Class.chat}>
-                <div className={Class.chatInfo}>
-                    <div className={Class.leftContainer}>
-                        <h1>Alexey Navalny</h1>
-                        <p>Online</p>
-                    </div>
 
-                    <div className={Class.rightContainer}>
-                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                        <img src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png" alt="" />
-                    </div>
-                </div>
+                <ChatInfo
+                    senderName="Alexey Navalny"
+                    status="Online"
+                    ava="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
+                />
 
-                <div className={Class.content}>
-                    <DialogMessage
-                        src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
-                        name="Alexey Navalny"
-                        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus orci augue, eu porta dolor vulputate quis. Aliquam egestas vel enim quis porttitor. Curabitur quis scelerisque risus. Donec vestibulum lorem diam, vel interdum nisl molestie at. Nullam lacinia bibendum ornare. Morbi malesuada velit non dui posuere, eget pellentesque est condimentum. Sed imperdiet dui turpis, ut interdum libero mollis id. Quisque vulputate, nibh eget scelerisque efficitur, enim nunc ornare libero, non finibus massa tellus sit amet turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                    />
+                <div className={Class.content}>{messages}</div>
 
-                    <DialogMessage
-                        src="https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png"
-                        name="Alexey Navalny"
-                        message="Россия без Путина не жизнеспособна."
-                    />
-                </div>
-
-                <div className={Class.sendMessage}>
-                    <textarea placeholder='Что у Вас нового?'></textarea>
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                </div>
+                <SendMessage />
                 {/* <i class="fa fa-commenting-o" aria-hidden="true"></i>
                 <p>Choose the user</p> */}
             </div>
