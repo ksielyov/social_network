@@ -31,7 +31,13 @@ const Dialogs = () => {
             src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
             name: 'Alexey Navalny',
             message: 'Россия без Путина не жизнеспособна.',
-        }
+        },
+
+        {
+            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
+            name: 'Pavel Durov',
+            message: 'Тут тупо сыглы.',
+        },
     ];
 
     let messages = dialogData.map(
@@ -72,6 +78,7 @@ const Dialogs = () => {
                 {/* <i class="fa fa-commenting-o" aria-hidden="true"></i>
                 <p>Choose the user</p> */}
             </div>
+
         </div>
     )
 }

@@ -3,7 +3,7 @@ import Class from './Profile.module.css';
 
 import Post from '../Post/Post';
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div>
             <div className={Class.profileInfo}>
@@ -13,11 +13,11 @@ const Profile = () => {
 
                 <div className={Class.ava}>
                     <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                    <p>Pavel Durov</p>
+                    <p>{props.name}</p>
                 </div>
 
                 <div className={Class.info}>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsam, delectus laudantium earum labore eaque quae minima omnis maiores, blanditiis mollitia culpa voluptates inventore modi facilis minus voluptatem ab assumenda.</p>
+                    <p>{props.description}</p>
                 </div>
             </div>
 
