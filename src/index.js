@@ -36,9 +36,26 @@ let dialogData = [
   },
 ];
 
+let postsData = [
+  {
+      postText : 'Это тестовый текст, значения передаются через Props.',
+      likeCount: '23'
+  },
+
+  {
+      postText: 'У меня голос для изменения программы.',
+      likeCount: '228'
+  },
+
+  {
+    postText: 'Ага реально.',
+    likeCount: '328'
+  }
+];
+
 ReactDOM.render(
   <React.StrictMode>
-    <App messagesDialogData={messagesDialogData} dialogData={dialogData} />
+    <App messagesDialogData={messagesDialogData} dialogData={dialogData} postsData={postsData} />
   </React.StrictMode>,
   document.getElementById('root')
 );

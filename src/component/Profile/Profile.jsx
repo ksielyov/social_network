@@ -4,6 +4,9 @@ import Class from './Profile.module.css';
 import Post from '../Post/Post';
 
 const Profile = (props) => {
+
+    let posts = props.postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
+
     return (
         <div>
             <div className={Class.profileInfo}>
@@ -26,15 +29,8 @@ const Profile = (props) => {
                 <textarea placeholder='Что у Вас нового?'></textarea>
             </div>
 
-            <Post
-                postText='Это тестовый текст, значения передаются через Props.'
-                likeCount='23'
-            />
-            
-            <Post
-                postText='У меня голос для изменения программы.'
-                likeCount='0'
-            />
+            {posts}
+
         </div>
     );
 }
