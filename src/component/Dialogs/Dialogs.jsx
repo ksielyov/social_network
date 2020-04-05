@@ -6,41 +6,9 @@ import DialogMessage from '../DialogMessage/DialogMessage';
 import ChatInfo from '../ChatInfo/ChatInfo';
 import SendMessage from '../SendMessage/SendMessage';
 
-const Dialogs = () => {
+const Dialogs = (props) => {
 
-    let messagesDialogData = [
-        {
-            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
-            name: 'Pavel Durov',
-            id: 4,
-            senderName: 'Me',
-            messageSlip: 'I read now.',
-        },
-
-        {
-            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
-            name: 'Alexey Navalny',
-            id: 3,
-            senderName: 'Alexey',
-            messageSlip: 'Yes',
-        },
-    ];
-
-    let dialogData = [
-        {
-            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
-            name: 'Alexey Navalny',
-            message: 'Россия без Путина не жизнеспособна.',
-        },
-
-        {
-            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
-            name: 'Pavel Durov',
-            message: 'Тут тупо сыглы.',
-        },
-    ];
-
-    let messages = dialogData.map(
+    let messages = props.dialogData.map(
         data => <DialogMessage
             src={data.src}
             name={data.name}
@@ -48,7 +16,7 @@ const Dialogs = () => {
         />
     );
 
-    let messagesDialog = messagesDialogData.map(
+    let messagesDialog = props.messagesDialogData.map(
         data => <Message
             src={data.src}
             name={data.name}
@@ -77,6 +45,7 @@ const Dialogs = () => {
                 <SendMessage />
                 {/* <i class="fa fa-commenting-o" aria-hidden="true"></i>
                 <p>Choose the user</p> */}
+
             </div>
 
         </div>
