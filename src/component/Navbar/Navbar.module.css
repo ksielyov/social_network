@@ -7,6 +7,7 @@
   margin-left: 76px;
   height: 21vh;
   border-radius: 5px;
+  margin-bottom: 4vh;
 }
 
 .nav ul {
@@ -37,4 +38,40 @@
 
 .nav ul li a i {
   width: 23%;
+}
+
+.friendsList {
+  background-color: #fff;
+  width: calc( 100% - 2vh );
+  margin-left: 76px;
+  height: 30vh;
+  border-radius: 5px;
+}
+
+.friendsCountContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 32px;
+  padding-left: 8px;
+  width: calc (100% - 8px);
+  margin-bottom: 4px;
+}
+
+.friendsCountContainer h1 {
+  margin-right: 4px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.friendsCountContainer p {
+  font-size: 13px;
+  color: #929EB0;
+}
+
+.friends {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

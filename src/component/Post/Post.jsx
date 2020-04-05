@@ -9,7 +9,7 @@ const Post = (props) => {
                 <p>Pavel Durov</p>
             </div>
                <p align='justify' className={Class.postText}>{props.postText}</p>
-            <div className={Class.iconContainer}><a>{props.likeCount}</a><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+            <div className={Class.iconContainer}><a>{props.likeCount}</a><i className="fa fa-heart-o" aria-hidden="true"></i></div>
         </div>
     )
 }

@@ -46,7 +46,16 @@ let state = {
             postText: 'Ага реально.',
             likeCount: '328'
         }
-    ]
+    ],
+
+    friendsElements: [
+        {
+            src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
+            name: 'Pavel'
+        }
+    ],
+
+    friendsCount: 256
 }
 
 export default state;
