@@ -7,6 +7,12 @@ const Profile = (props) => {
 
     let posts = props.postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
+    let postLabel = React.createRef();
+
+    let getFullArea = () => {
+        alert(postLabel.current.value);
+    }
+    
     return (
         <div>
             <div className={Class.profileInfo}>
@@ -26,7 +32,7 @@ const Profile = (props) => {
 
             <div className={Class.profilePostNew}>
                 <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                <textarea placeholder='Что у Вас нового?'></textarea>
+                <textarea ref={postLabel} onClick={ () => getFullArea() } placeholder='Что у Вас нового?'></textarea>
             </div>
 
             {posts}
