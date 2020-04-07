@@ -1,3 +1,5 @@
+import { render } from "../render";
+
 let state = {
     messagesDialogData: [
         {
@@ -7,7 +9,7 @@ let state = {
             senderName: 'Me',
             messageSlip: 'I read now.',
         },
-    
+
         {
             src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
             name: 'Alexey Navalny',
@@ -16,35 +18,38 @@ let state = {
             messageSlip: 'Yes',
         },
     ],
-    
+
     dialogData: [
         {
             src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
             name: 'Alexey Navalny',
             message: 'Россия без Путина не жизнеспособна.',
         },
-    
+
         {
             src: 'https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png',
             name: 'Pavel Durov',
             message: 'Тут тупо сыглы.',
         },
     ],
-    
+
     postsData: [
         {
             postText: 'Это тестовый текст, значения передаются через Props.',
-            likeCount: '23'
+            likeCount: '23',
+            id: 1,
         },
-    
+
         {
             postText: 'У меня голос для изменения программы.',
-            likeCount: '228'
+            likeCount: '228',
+            id: 2,
         },
-    
+
         {
             postText: 'Ага реально.',
-            likeCount: '328'
+            likeCount: '328',
+            id: 3,
         }
     ],
 
@@ -55,7 +60,27 @@ let state = {
         }
     ],
 
-    friendsCount: 256
+    friendsCount: 256,
+
+    profilePostInputActive: false
+}
+
+export let addPost = postText => {
+    state.postsData.push(
+        {
+            postText: postText,
+            likeCount: '0',
+            id: 4,
+        },
+    );
+
+    render(state);
+}
+
+export let updateProfileInputStatus = status => {
+    state.profilePostInputActive = status;
+
+    render(state);
 }
 
 export default state;

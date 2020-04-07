@@ -17,7 +17,16 @@ function App(props) {
         <Header />
         <Navbar friendsElements={props.globalState.friendsElements} friendsCount={props.globalState.friendsCount} />
         <div className='app-wrapper-content'>
-          <Route exact path={['/', '/profile']} render={() => <Profile name="Alexey Navalny" description="This is my status." postsData={props.globalState.postsData} />} />
+          <Route exact path={['/', '/profile']} render={
+            () => <Profile
+              name="Alexey Navalny"
+              description="This is my status."
+              postsData={props.globalState.postsData}
+              addPostFun={props.addPostFun}
+              inputActive={props.globalState.profilePostInputActive}
+              updateProfileInputStatus={props.updateProfileInputStatus}
+            />
+          } />
           <Route path='/messages' render={() => <Dialogs messagesDialogData={props.globalState.messagesDialogData} dialogData={props.globalState.dialogData} />} />
           <Route exact path='/news' render={() => <News />} />
           <Route exact path='/music' render={() => <Music />} />

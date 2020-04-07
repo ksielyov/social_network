@@ -10,7 +10,7 @@ const ChatInfo = (props) => {
             </div>
 
             <div className={Class.rightContainer}>
-                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
                 <img src={props.ava} alt="" />
             </div>
         </div>

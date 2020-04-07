@@ -5,14 +5,23 @@ import Post from '../Post/Post';
 
 const Profile = (props) => {
 
+    console.log(props);
+    
+
     let posts = props.postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
     let postLabel = React.createRef();
 
-    let getFullArea = () => {
-        alert(postLabel.current.value);
+    let addPost = () => {
+        props.addPostFun(postLabel.current.value);
+
+        postLabel.current.value = '';
+
+        props.updateProfileInputStatus(false);
     }
-    
+
+    let openEditor = () => props.updateProfileInputStatus(true);
+
     return (
         <div>
             <div className={Class.profileInfo}>
@@ -30,10 +39,25 @@ const Profile = (props) => {
                 </div>
             </div>
 
-            <div className={Class.profilePostNew}>
-                <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                <textarea ref={postLabel} onClick={ () => getFullArea() } placeholder='Что у Вас нового?'></textarea>
-            </div>
+            {
+                props.inputActive ? (
+                    <div className={Class.profilePostNew__Active}>
+                        <div className={Class.profilePostContainer__Active}>
+                            <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
+                            <textarea ref={postLabel} placeholder='Что у Вас нового?'></textarea>
+                            {/* <i onClick={ () => addPost() } className="fa fa-paper-plane-o" aria-hidden="true"></i> */}
+                        </div>
+                        <div onClick={ () => addPost() } className={Class.sendPostContainer__Active}><p className={Class.sendPost__Active}>Добавить</p></div>
+                    </div>
+                ) : (
+                        <div className={Class.profilePostNew}>
+                            <div className={Class.profilePostContainer}>
+                                <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
+                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?'></textarea>
+                            </div>
+                        </div>
+                    )
+            }
 
             {posts}
 

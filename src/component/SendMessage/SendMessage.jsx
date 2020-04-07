@@ -12,7 +12,7 @@ const SendMessage = (props) => {
     return (
         <div className={Class.sendMessage}>
             <textarea ref={messageText} placeholder='Your message...'></textarea>
-            <i onClick={() => sendMessage()} class="fa fa-paper-plane-o" aria-hidden="true"></i>
+            <i onClick={() => sendMessage()} className="fa fa-paper-plane-o" aria-hidden="true"></i>
         </div>
     )
 

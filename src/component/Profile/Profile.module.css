@@ -65,3 +65,69 @@
 .info {
   margin-left: 4%;
 }
+
+.profilePostContainer {
+  width:100%;
+  height: 8vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profilePostNew__Active {
+  background-color: #fff;
+  width: calc( 90% - 32px);
+  padding: 8px 16px 4px 16px;
+  border-radius: 5px;
+  margin-bottom: 4vh;
+}
+
+.info__Active {
+  margin-left: 4%;
+}
+
+.profilePostContainer__Active {
+  width:100%;
+  height: 14vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.profilePostContainer__Active img {
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 100vh;
+}
+
+.profilePostContainer__Active textarea {
+  width: 94%;
+  height: 12vh;
+  line-height: 20px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  resize: none;
+  border-bottom: #E3E4E8 solid 1px;
+}
+
+.sendPostContainer__Active {
+  width: 96px;
+  height: 28px;
+  border-radius: 5px;
+  background: #4A76A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.sendPost__Active {
+  font-size: 16px;
+  color:#fff;
+}
