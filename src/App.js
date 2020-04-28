@@ -22,9 +22,11 @@ function App(props) {
               name="Alexey Navalny"
               description="This is my status."
               postsData={props.globalState.postsData}
+              postTempText={props.globalState.postTempText}
               addPostFun={props.addPostFun}
               inputActive={props.globalState.profilePostInputActive}
               updateProfileInputStatus={props.updateProfileInputStatus}
+              updatePostText={props.updatePostText}
             />
           } />
           <Route path='/messages' render={() => <Dialogs messagesDialogData={props.globalState.messagesDialogData} dialogData={props.globalState.dialogData} />} />

@@ -5,17 +5,12 @@ import Post from '../Post/Post';
 
 const Profile = (props) => {
 
-    console.log(props);
-    
-
     let posts = props.postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
     let postLabel = React.createRef();
 
     let addPost = () => {
-        props.addPostFun(postLabel.current.value);
-
-        postLabel.current.value = '';
+        props.addPostFun();
 
         props.updateProfileInputStatus(false);
     }
@@ -44,7 +39,7 @@ const Profile = (props) => {
                     <div className={Class.profilePostNew__Active}>
                         <div className={Class.profilePostContainer__Active}>
                             <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                            <textarea ref={postLabel} placeholder='Что у Вас нового?'></textarea>
+                            <textarea onChange={data => props.updatePostText(data.target.value)} placeholder='Что у Вас нового?' value={props.postTempText} />
                             {/* <i onClick={ () => addPost() } className="fa fa-paper-plane-o" aria-hidden="true"></i> */}
                         </div>
                         <div onClick={ () => addPost() } className={Class.sendPostContainer__Active}><p className={Class.sendPost__Active}>Добавить</p></div>
@@ -53,7 +48,7 @@ const Profile = (props) => {
                         <div className={Class.profilePostNew}>
                             <div className={Class.profilePostContainer}>
                                 <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?'></textarea>
+                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?' value={props.postTempText} />
                             </div>
                         </div>
                     )

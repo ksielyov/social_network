@@ -1,4 +1,4 @@
-import { render } from "../render";
+let render = () => {}
 
 let state = {
     messagesDialogData: [
@@ -62,25 +62,41 @@ let state = {
 
     friendsCount: 256,
 
-    profilePostInputActive: false
+    profilePostInputActive: false,
+
+    postTempText: ''
 }
 
-export let addPost = postText => {
+export const addPost = () => {
     state.postsData.push(
         {
-            postText: postText,
+            postText: state.postTempText,
             likeCount: '0',
             id: 4,
         },
     );
 
+    state.postTempText = '';
+
     render(state);
 }
 
-export let updateProfileInputStatus = status => {
+export const updateProfileInputStatus = status => {
     state.profilePostInputActive = status;
 
     render(state);
 }
+
+export const updatePostText = text => {
+    state.postTempText = text;
+
+    render(state);
+}
+
+export const subscribe = observer => {
+    render = observer;
+}
+
+window.state = state;
 
 export default state;
