@@ -8,7 +8,7 @@ import SendMessage from '../SendMessage/SendMessage';
 
 const Dialogs = (props) => {
 
-    let messages = props.dialogData.map(
+    let messages = props.store.getState().dialogData.map(
         data => <DialogMessage
             src={data.src}
             name={data.name}
@@ -16,7 +16,7 @@ const Dialogs = (props) => {
         />
     );
 
-    let messagesDialog = props.messagesDialogData.map(
+    let messagesDialog = props.store.getState().messagesDialogData.map(
         data => <Message
             src={data.src}
             name={data.name}

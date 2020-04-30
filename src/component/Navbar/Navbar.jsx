@@ -6,7 +6,7 @@ import FriendItem from '../FriendItem/FriendItem';
 
 const Navbar = (props) => {
 
-    let friends = props.friendsElements.map(
+    let friends = props.store.getState().friendsElements.map(
         data => <FriendItem
             src={data.src}
             name={data.name}

@@ -15,21 +15,16 @@ function App(props) {
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar friendsElements={props.globalState.friendsElements} friendsCount={props.globalState.friendsCount} />
+        <Navbar store={props.store} />
         <div className='app-wrapper-content'>
           <Route exact path={['/', '/profile']} render={
             () => <Profile
               name="Alexey Navalny"
               description="This is my status."
-              postsData={props.globalState.postsData}
-              postTempText={props.globalState.postTempText}
-              addPostFun={props.addPostFun}
-              inputActive={props.globalState.profilePostInputActive}
-              updateProfileInputStatus={props.updateProfileInputStatus}
-              updatePostText={props.updatePostText}
+              store={props.store}
             />
           } />
-          <Route path='/messages' render={() => <Dialogs messagesDialogData={props.globalState.messagesDialogData} dialogData={props.globalState.dialogData} />} />
+          <Route path='/messages' render={() => <Dialogs store={props.store} />} />
           <Route exact path='/news' render={() => <News />} />
           <Route exact path='/music' render={() => <Music />} />
         </div>
