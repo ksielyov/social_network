@@ -66,13 +66,13 @@ let store = {
         postTempText: '',
     },
     
-    updateProfileInputStatus(status) {
+    _updateProfileInputStatus(status) {
         this._state.profilePostInputActive = status;
     
         this.render(this._state);
     },
     
-    addPost() {
+    _addPost() {
         this._state.postsData.push(
             {
                 postText: this._state.postTempText,
@@ -86,7 +86,7 @@ let store = {
         this.render(this._state);
     },
     
-    updatePostText(text) {
+    _updatePostText(text) {
         this._state.postTempText = text;
     
         this.render(this._state);
@@ -98,6 +98,21 @@ let store = {
 
     getState() {
         return this._state;
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-NEW-POST') {
+            this._addPost();
+            this._updateProfileInputStatus(false);
+        }
+
+        else if (action.type === 'UPDATE-PROFILE-INPUT-STATUS') {
+            this._updateProfileInputStatus(true);
+        }
+
+        else if(action.type === 'UPDATE-POST-TEMP') {
+            this._updatePostText(action.text);
+        } 
     },
 
     render() {

@@ -8,12 +8,14 @@ const Profile = (props) => {
     let posts = props.store.getState().postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
     let addPost = () => {
-        props.store.addPost();
-
-        props.store.updateProfileInputStatus(false);
+        props.store.dispatch({ type : 'ADD-NEW-POST' });
     }
 
-    let openEditor = () => props.store.updateProfileInputStatus(true);
+    let openEditor = () => props.store.dispatch({ type : 'UPDATE-PROFILE-INPUT-STATUS' });
+
+    let textUpdate = data => {
+        props.store.dispatch({ type : 'UPDATE-POST-TEMP', text : data.target.value });
+    }
 
     return (
         <div>
@@ -37,7 +39,7 @@ const Profile = (props) => {
                     <div className={Class.profilePostNew__Active}>
                         <div className={Class.profilePostContainer__Active}>
                             <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                            <textarea onChange={data => props.store.updatePostText(data.target.value)} placeholder='Что у Вас нового?' value={props.store.getState().postTempText} />
+                            <textarea onChange={data => textUpdate(data)} placeholder='Что у Вас нового?' value={props.store.getState().postTempText} />
                             {/* <i onClick={ () => addPost() } className="fa fa-paper-plane-o" aria-hidden="true"></i> */}
                         </div>
                         <div onClick={ () => addPost() } className={Class.sendPostContainer__Active}><p className={Class.sendPost__Active}>Добавить</p></div>
