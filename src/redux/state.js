@@ -120,6 +120,25 @@ let store = {
     }
 }
 
+export const addNewPostActionCreator = () => {
+    return {
+        type : 'ADD-NEW-POST'
+    };
+}
+
+export const updateProfileInputStatusActionCreator = () => {
+    return {
+        type : 'UPDATE-PROFILE-INPUT-STATUS'
+    };
+}
+
+export const updatePostTextActionCreator = text => {
+    return {
+        type : 'UPDATE-POST-TEMP',
+        text : text
+    };
+}
+
 window.store = store;
 
 export default store;

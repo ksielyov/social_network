@@ -1,6 +1,7 @@
 import React from 'react';
 import Class from './Profile.module.css';
 
+import {addNewPostActionCreator, updateProfileInputStatusActionCreator, updatePostTextActionCreator} from "../../redux/state";
 import Post from '../Post/Post';
 
 const Profile = (props) => {
@@ -8,13 +9,13 @@ const Profile = (props) => {
     let posts = props.store.getState().postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
     let addPost = () => {
-        props.store.dispatch({ type : 'ADD-NEW-POST' });
+        props.store.dispatch(addNewPostActionCreator());
     }
 
-    let openEditor = () => props.store.dispatch({ type : 'UPDATE-PROFILE-INPUT-STATUS' });
+    let openEditor = () => props.store.dispatch(updateProfileInputStatusActionCreator());
 
     let textUpdate = data => {
-        props.store.dispatch({ type : 'UPDATE-POST-TEMP', text : data.target.value });
+        props.store.dispatch(updatePostTextActionCreator(data.target.value));
     }
 
     return (
