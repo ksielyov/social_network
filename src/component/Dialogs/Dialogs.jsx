@@ -8,7 +8,7 @@ import SendMessage from '../SendMessage/SendMessage';
 
 const Dialogs = (props) => {
 
-    let messages = props.store.getState().dialogData.map(
+    let messages = props.store.getState().messages.dialogData.map(
         data => <DialogMessage
             src={data.src}
             name={data.name}
@@ -16,7 +16,7 @@ const Dialogs = (props) => {
         />
     );
 
-    let messagesDialog = props.store.getState().messagesDialogData.map(
+    let messagesDialog = props.store.getState().messages.messagesDialogData.map(
         data => <Message
             src={data.src}
             name={data.name}
@@ -42,7 +42,7 @@ const Dialogs = (props) => {
 
                 <div className={Class.content}>{messages}</div>
 
-                <SendMessage />
+                <SendMessage store={props.store} />
                 {/* <i class="fa fa-commenting-o" aria-hidden="true"></i>
                 <p>Choose the user</p> */}
 

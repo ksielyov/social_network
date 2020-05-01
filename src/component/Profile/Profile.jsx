@@ -6,7 +6,7 @@ import Post from '../Post/Post';
 
 const Profile = (props) => {
 
-    let posts = props.store.getState().postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
+    let posts = props.store.getState().wall.postsData.map(data => <Post postText={data.postText} likeCount={data.likeCount} />);
 
     let addPost = () => {
         props.store.dispatch(addNewPostActionCreator());
@@ -36,11 +36,11 @@ const Profile = (props) => {
             </div>
 
             {
-                props.store.getState().profilePostInputActive ? (
+                props.store.getState().wall.profilePostInputActive ? (
                     <div className={Class.profilePostNew__Active}>
                         <div className={Class.profilePostContainer__Active}>
                             <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                            <textarea onChange={data => textUpdate(data)} placeholder='Что у Вас нового?' value={props.store.getState().postTempText} />
+                            <textarea onChange={data => textUpdate(data)} placeholder='Что у Вас нового?' value={props.store.getState().wall.postTempText} />
                             {/* <i onClick={ () => addPost() } className="fa fa-paper-plane-o" aria-hidden="true"></i> */}
                         </div>
                         <div onClick={ () => addPost() } className={Class.sendPostContainer__Active}><p className={Class.sendPost__Active}>Добавить</p></div>
@@ -49,7 +49,7 @@ const Profile = (props) => {
                         <div className={Class.profilePostNew}>
                             <div className={Class.profilePostContainer}>
                                 <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?' value={props.store.getState().postTempText} />
+                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?' value={props.store.getState().wall.postTempText} />
                             </div>
                         </div>
                     )
