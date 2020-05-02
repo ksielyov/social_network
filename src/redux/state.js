@@ -1,3 +1,6 @@
+import profileReducer from './reducers/profileReducer';
+import activeDialogReducer from './reducers/activeDialogReducer';
+
 let store = {
     _state: {
         messages: {
@@ -125,26 +128,10 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-NEW-POST') {
-            this._addPost();
-            this._updateProfileInputStatus(false);
-        }
+        this._state.wall     = profileReducer(this._state.wall, action);
+        this._state.messages = activeDialogReducer(this._state.messages, action);
 
-        else if (action.type === 'UPDATE-PROFILE-INPUT-STATUS') {
-            this._updateProfileInputStatus(true);
-        }
-
-        else if(action.type === 'UPDATE-POST-TEMP') {
-            this._updatePostText(action.text);
-        }
-
-        else if (action.type === 'UPDATE-MESSAGE-TEXT') {
-            this._updateMessageText(action.text);
-        }
-
-        else if (action.type === 'ADD-NEW-MESSAGE') {
-            this._addNewMessage();
-        }
+        this.render(this._state);
     },
 
     render() {
