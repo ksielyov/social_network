@@ -1,7 +1,7 @@
 import React from 'react';
 import Class from './Profile.module.css';
 
-import {addNewPostActionCreator, updateProfileInputStatusActionCreator, updatePostTextActionCreator} from "../../redux/state";
+import {addNewPostActionCreator, updateProfileInputStatusActionCreator, updatePostTextActionCreator} from "../../redux/reducers/profileReducer";
 import Post from '../Post/Post';
 
 const Profile = (props) => {
@@ -49,7 +49,7 @@ const Profile = (props) => {
                         <div className={Class.profilePostNew}>
                             <div className={Class.profilePostContainer}>
                                 <img src='https://miro.medium.com/max/2400/1*hgVVYMtzC2FjK221f-6wyA.png' />
-                                <textarea onClick={() => openEditor()} placeholder='Что у Вас нового?' value={props.store.getState().wall.postTempText} />
+                                <textarea readOnly onClick={() => openEditor()} placeholder='Что у Вас нового?' value={props.store.getState().wall.postTempText} />
                             </div>
                         </div>
                     )

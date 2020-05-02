@@ -139,38 +139,6 @@ let store = {
     }
 }
 
-export const addNewPostActionCreator = () => {
-    return {
-        type : 'ADD-NEW-POST'
-    };
-}
-
-export const updateProfileInputStatusActionCreator = () => {
-    return {
-        type : 'UPDATE-PROFILE-INPUT-STATUS'
-    };
-}
-
-export const updatePostTextActionCreator = text => {
-    return {
-        type : 'UPDATE-POST-TEMP',
-        text : text
-    };
-}
-
-export const updateMessageTextActionCreator = text => {
-    return {
-        type : 'UPDATE-MESSAGE-TEXT',
-        text : text
-    };
-}
-
-export const addNewMessageActionCreator = () => {
-    return {
-        type : 'ADD-NEW-MESSAGE',
-    };
-}
-
 window.store = store;
 
 export default store;
