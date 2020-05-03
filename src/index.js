@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import './index.css';
 import App from './App';
-import store from './redux/state';
+import store from './redux/reduxStore';
 
-let render = state => {
+let render = store => {
   ReactDOM.render(
     <React.StrictMode>
       <App store={store} />
@@ -15,9 +15,9 @@ let render = state => {
   );
 }
 
-render(store.getState());
+render(store);
 
-store.subscribe(render);
+store.subscribe(() => render(store));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

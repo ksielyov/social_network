@@ -1,7 +1,7 @@
 import React from 'react';
 import Class from './FriendItem.module.css';
 
-const FriendItem = (props) => {
+const FriendItem = props => {
     return (
         <div className={Class.friendItem}>
             <img src={props.src} />

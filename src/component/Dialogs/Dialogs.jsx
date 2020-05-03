@@ -8,6 +8,9 @@ import SendMessage from '../SendMessage/SendMessage';
 
 const Dialogs = (props) => {
 
+    console.log(props);
+    
+
     let messages = props.store.getState().messages.dialogData.map(
         data => <DialogMessage
             src={data.src}
